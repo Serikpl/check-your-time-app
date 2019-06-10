@@ -1,0 +1,46 @@
+<div class="custom-tile">
+	<form [formGroup]="taskForm" (submit)="submitFormHandler()">
+
+		<!-- would we use this module? -->
+		<!-- <mat-form-field class="example-full-width">
+			<input matInput placeholder="text placeholder">
+		</mat-form-field> -->
+
+		<!-- name -->
+		<fieldset class="form-group">
+			<label>
+				<span>Task name</span>
+			</label>
+			<input 
+				formControlName="name" 
+				type="text" 
+				name="name"
+				class="form-control" 
+				placeholder="Enter task name"
+			/>
+			<span *ngIf="ifShowError('name', 'required')" class="text-danger">Name is required</span>
+			<span *ngIf="ifShowError('name', 'minlength')" class="text-danger">Name minimum length is 2</span>
+			<span *ngIf="ifShowError('name', 'maxlength')" class="text-danger">Name maximum length is 255</span>
+		</fieldset>
+
+		<!-- description -->
+		<fieldset class="form-group">
+			<label>
+				<span>Task description</span>
+			</label>
+			<textarea 
+				formControlName="description" 
+				type="text" 
+				name="description"
+				class="form-control"
+				placeholder="Enter description"
+			>
+			</textarea>
+		</fieldset>
+
+		<button class="btn btn-primary mb-2">
+			Add task
+		</button>
+
+	</form>
+</div>

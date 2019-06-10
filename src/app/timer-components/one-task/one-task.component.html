@@ -1,0 +1,30 @@
+<article *ngIf="task" class="row justify-content-between">
+	<div class="col col-md-6 col-xs-12">
+		<h3>{{ task.name }}</h3>
+		<p>{{ task.description }}</p>
+	</div>
+
+	<div class="col col-md-6 col-xs-12 text-right">
+		<h5 class="badge badge-primary">Duration: {{ task.duration | duration }}</h5>
+
+		<div>
+			<button 
+				type="button" 
+				class="btn btn-primary btn-sm" 
+				(click)="stopTask()"	
+				*ngIf="task.is_active"
+			>
+				<i class="material-icons md-18 md-dark">pause_circle_filled</i>
+			</button>
+			
+			<button 
+				type="button" 
+				class="btn btn-primary btn-sm" 
+				(click)="startTask()"	
+				*ngIf="!task.is_active"
+			>
+				<i class="material-icons md-18 md-dark">play_circle_filled</i>
+			</button>
+		</div>
+	</div>
+</article>

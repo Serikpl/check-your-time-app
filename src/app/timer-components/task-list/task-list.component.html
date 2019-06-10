@@ -1,0 +1,18 @@
+<section class="custom-tile">
+	<h4> Tasks </h4>
+
+	<div class="list-group mb-2 list-container">
+		<ng-container *ngIf="tasks?.length > 0">
+			<one-task 
+				*ngFor="let task of tasks" 
+				class="list-group-item" 
+				[task]="task"
+			>
+			</one-task>
+		</ng-container>
+
+		<ng-container *ngIf="tasks?.length === 0">
+			There are no tasks
+		</ng-container>
+	</div>
+</section>

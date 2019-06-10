@@ -1,1 +1,25 @@
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* You can add global styles to this file, and also import other style files */
+$base-blue: rgb(170, 203, 255);
+
+body{
+	background-color: $base-blue;
+}
+
+.custom-tile{
+	border: 1px solid #999;
+  padding: 20px;
+  background-color: pink;
+	box-shadow: 0px 6px 12px 1px #888;
+	margin-bottom: 30px;
+}
+
+.list-group-item{
+	border: 1px solid #bbb;
+	margin-bottom: 10px;
+}
+
+.list-container{
+	max-height: 420px;
+	overflow: auto;
+}
