@@ -25,9 +25,9 @@ export class TasksService
 	}
 
 	// #region algorithm GENERATING UNIQUE indexes
-	getIndex(): number {
-		let generateIndex = () => Math.random() * Math.pow(10, 17);;
-		let newIndex: number = null;
+	getIndex(): string {
+		let generateIndex = () => Math.random().toString(16).slice(2,);
+		let newIndex: string = null;
 
 		while(!newIndex){
 			newIndex = generateIndex();
@@ -37,7 +37,7 @@ export class TasksService
 		return newIndex;
 	}
 
-	checkIfIndexExist(_index: number){
+	checkIfIndexExist(_index: string){
 		return !this.tasks.some((t: Task) => t.task_id === _index);
 	}
 	// #endregoin unique indexes
